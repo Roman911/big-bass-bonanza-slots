@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { SourceMapDevToolPlugin, ProvidePlugin } = require("webpack")
 
 let mode = "development";
 
@@ -28,6 +29,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "./src/index.html",
     }),
+    new SourceMapDevToolPlugin(),
+    new ProvidePlugin({ PIXI: 'pixi.js' })
   ],
   module: {
     rules: [

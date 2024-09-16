@@ -1,118 +1,131 @@
-/* Модальный (фон) */
-.modal {
-  position: fixed; /* Оставаться на месте */
-  z-index: 11; /* Сидеть на вершине */
-  padding-top: 100px; /* Расположение коробки */
-  left: 0;
+$modalZIndex: 100;
+$headerHeight: 56px;
+
+.modal_overlay {
+  position: fixed;
   top: 0;
-  width: 100%; /* Полная ширина */
-  height: 100%; /* Полная высота */
-  overflow: auto; /* Включите прокрутку, если это необходимо */
-  background-color: rgba(0, 0, 0, 0.5); /* Цвет запасной вариант  */
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: none;
+  background: rgba(37, 37, 37, 0.85);
+  z-index: $modalZIndex;
 
-  /* Модальное содержание */
-  &__content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 400px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px,
-      rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
-    animation-name: animatetop;
-    animation-duration: 0.4s;
-    max-height: calc(100vh - 40px);
-    overflow-y: auto;
-    @media only screen and (max-width: 440px) {
-      width: 320px;
-    }
+  &.show {
+    display: block;
   }
+}
 
-  &__img {
-    background-image: url("/src/images/47ebd611dbd9a64824a701b2fb601dca.jpg");
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 240px;
-  }
-  &__title {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    h2 {
-      color: #fff;
-      text-transform: uppercase;
-    }
-  }
-  &__body {
-    padding: 20px;
-    h2 {
-      text-align: center;
-    }
-    h4 {
-      margin-bottom: 20px;
-    }
-  }
-  &__card {
-    position: relative;
-    margin-top: 15px;
-    margin-bottom: 15px;
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: $modalZIndex;
+  -webkit-overflow-scrolling: touch;
+  display: none;
+  animation: animatetop 0.5s ease;
+
+  &.show {
     display: flex;
-    align-items: center;
-    .card {
-      &__img {
-        background-image: url("/src/images/47ebd611dbd9a64824a701b2fb601dca.jpg");
-        background-position: center center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        height: 90px;
-        width: 90px;
+  }
+
+  .popup {
+    position: relative;
+    width: 548px;
+    max-width: 100%;
+    margin: auto;
+    animation: appear 0.5s ease;
+    border-radius: 20px;
+    overflow: hidden;
+
+    > .header {
+      padding: 0 18px;
+      position: relative;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: $headerHeight;
+      line-height: $headerHeight;
+      color: #ffffff;
+      background: linear-gradient(136deg, #3A90E9 0%, #266BC5 87.32%);
+
+      .title {
+        padding: 0;
+        font-size: 24px;
+        font-weight: 700;
       }
-      &__btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
+
+      .close {
         cursor: pointer;
-      }
-      &__svg {
-        width: 26px;
-        height: 26px;
-        color: rgba(0, 0, 0, 0.87);
-        &:hover {
+        display: flex;
+        line-height: $headerHeight;
+        transition: 200ms;
+
+        &:hover,
+        &:focus,
+        &:active {
           opacity: 0.8;
         }
       }
-      &__body {
-        width: calc(100% - 90px);
-        padding: 10px 20px;
-      }
     }
-  }
-  &__btn {
-    padding: 10px;
-    text-align: right;
-    button {
-      background: none;
-      border: none;
-      color: rgb(25, 118, 210);
-      text-transform: uppercase;
-      cursor: pointer;
+
+    > .content {
+      min-height: 400px;
+      color: #262626;
+      background: #EFF5FE;
+      padding: 6px 30px 20px;
+      border-radius: 0 0 20px 20px;
+
+      img {
+        width: 100%;
+      }
+
+      .block {
+        max-width: 366px;
+        margin: 10px auto 0;
+
+        .description {
+          margin-bottom: 30px;
+        }
+
+        .checkbox-description {
+          font-size: 12px;
+
+          a {
+            color: #193AB2;
+            text-decoration: underline;
+          }
+        }
+
+        button {
+          border: none;
+          background: none;
+          margin: 0 auto;
+          display: block;
+          cursor: pointer;
+          transition: 200ms;
+
+          &:hover {
+            filter: brightness(110%);
+          }
+        }
+      }
     }
   }
 }
 
-/* Добавить анимацию */
 @keyframes animatetop {
   from {
     opacity: 0;
-    top: 35%;
+    transform: translateY(-10%);
   }
   to {
     opacity: 1;
-    top: 50%;
+    transform: translateY(0%);
   }
 }
