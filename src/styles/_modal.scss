@@ -1,0 +1,118 @@
+/* Модальный (фон) */
+.modal {
+  position: fixed; /* Оставаться на месте */
+  z-index: 11; /* Сидеть на вершине */
+  padding-top: 100px; /* Расположение коробки */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgba(0, 0, 0, 0.5); /* Цвет запасной вариант  */
+
+  /* Модальное содержание */
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(0, 0, 0);
+    box-shadow: rgb(0 0 0 / 20%) 0px 11px 15px -7px,
+      rgb(0 0 0 / 14%) 0px 24px 38px 3px, rgb(0 0 0 / 12%) 0px 9px 46px 8px;
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    @media only screen and (max-width: 440px) {
+      width: 320px;
+    }
+  }
+
+  &__img {
+    background-image: url("/src/images/47ebd611dbd9a64824a701b2fb601dca.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 240px;
+  }
+  &__title {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    h2 {
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+  &__body {
+    padding: 20px;
+    h2 {
+      text-align: center;
+    }
+    h4 {
+      margin-bottom: 20px;
+    }
+  }
+  &__card {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    .card {
+      &__img {
+        background-image: url("/src/images/47ebd611dbd9a64824a701b2fb601dca.jpg");
+        background-position: center center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 90px;
+        width: 90px;
+      }
+      &__btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      &__svg {
+        width: 26px;
+        height: 26px;
+        color: rgba(0, 0, 0, 0.87);
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+      &__body {
+        width: calc(100% - 90px);
+        padding: 10px 20px;
+      }
+    }
+  }
+  &__btn {
+    padding: 10px;
+    text-align: right;
+    button {
+      background: none;
+      border: none;
+      color: rgb(25, 118, 210);
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+  }
+}
+
+/* Добавить анимацию */
+@keyframes animatetop {
+  from {
+    opacity: 0;
+    top: 35%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}

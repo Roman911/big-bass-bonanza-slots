@@ -1,0 +1,53 @@
+@import "src/variabels/colors";
+
+$shadow: rgb(185, 185, 185);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+li {
+  list-style-type: none;
+}
+
+button {
+  text-transform: uppercase;
+  cursor: pointer;
+  
+}
+
+.btn {
+  border-radius: 0;
+  padding: 5px 15px;
+  color: $primary;
+  border: 2px solid $primary;
+  background-color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  transition: 300ms;
+
+  
+
+  &:hover:not([disabled]) {
+    background-color: $primary;
+    color: #fff;
+  }
+  &:disabled {
+    opacity: 0.6;
+    cursor: no-drop;
+  }
+  
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 20px;
+}
+
+.shadow {
+  box-shadow: 0 0 20px 0 $shadow;
+}
