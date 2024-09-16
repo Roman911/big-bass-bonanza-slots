@@ -19,6 +19,8 @@ import iconQ from '../images/icon-Q.png';
 import iconRod from '../images/icon-rod.png';
 import iconScatter from '../images/icon-scatter.png';
 
+import sound from '../sounds/coin-win.wav';
+
 (async () => {
     // Create a new application
     const app = new Application();
@@ -111,10 +113,6 @@ import iconScatter from '../images/icon-scatter.png';
             const r = reels[i];
             const extra = 8;
             const target = r.position + 10 + i * 5 + extra;
-            if(i===4) {
-                console.log(target)
-            }
-
             const time = 2500 + i * 600 + extra * 600;
 
             tweenTo(r, 'position', target, time, backout(0.5), null, i === reels.length - 1 ? reelsComplete : null);
@@ -218,10 +216,13 @@ import iconScatter from '../images/icon-scatter.png';
     const winElements = document.querySelectorAll('.win');
     const modalOverlay = document.querySelector('.modal_overlay');
     const modalSignup = document.querySelector('.modal_signup');
+    const win = new Audio('https://n1md7.github.io/slot-game/sound/win.mp3');
+    const spin = new Audio('https://n1md7.github.io/slot-game/sound/spin.mp3');
     //const closeBtn = document.querySelector('.close__btn');
 
     const winnerShow = () => {
         setTimeout(() => {
+            win.play();
             winner.classList.add('active');
             // btn.style.opacity = 1;
             // btn.style.pointerEvents = 'auto';
@@ -239,6 +240,8 @@ import iconScatter from '../images/icon-scatter.png';
     };
 
     btn.addEventListener('click', (e) => {
+        // document.getElementById('/src/sounds/coin-win.wav').play();
+        spin.play();
         startPlay();
         winnerShow();
         btn.style.opacity = 0.5;

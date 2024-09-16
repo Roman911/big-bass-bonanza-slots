@@ -48,10 +48,11 @@ $headerHeight: 56px;
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       height: $headerHeight;
       line-height: $headerHeight;
       color: #ffffff;
+      text-align: center;
       background: linear-gradient(136deg, #3A90E9 0%, #266BC5 87.32%);
 
       .title {

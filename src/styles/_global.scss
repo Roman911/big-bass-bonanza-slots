@@ -27,6 +27,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  @media screen and (max-width: 900px) {
+    padding: 4% 16.5%;
+  }
 }
 
 canvas {
@@ -71,17 +75,10 @@ button.btn_spin {
   transition: 500ms;
 
   .win {
-    animation: animatetopw 0.5s ease;
-    display: none;
-
-    &.active {
-      display: block;
-    }
-  }
-
-  .win {
     width: 200px;
     height: 200px;
+    animation: animatetopw 0.5s ease;
+    display: none;
     background-image: url("/src/images/icon-win.png");
     background-repeat: no-repeat;
     background-position: center;
@@ -89,6 +86,21 @@ button.btn_spin {
 
     &:not(:first-child) {
       margin-left: -60px;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    padding: 0;
+    left: 11%;
+    right: 11%;
+
+    .win {
+      width: 114px;
+      height: 114px;
     }
   }
 }
