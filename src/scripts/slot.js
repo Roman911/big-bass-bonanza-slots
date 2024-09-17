@@ -212,46 +212,49 @@ import sound from '../sounds/coin-win.wav';
         return (t) => --t * t * ((amount + 1) * t + amount) + 1;
     }
 
-    const btn = document.querySelector('.btn_spin');
-    const winner = document.querySelector('.winner');
-    const winElements = document.querySelectorAll('.win');
-    const modalOverlay = document.querySelector('.modal_overlay');
-    const modalSignup = document.querySelector('.modal_signup');
-    const win = new Audio('https://n1md7.github.io/slot-game/sound/win.mp3');
-    const spin = new Audio('https://n1md7.github.io/slot-game/sound/spin.mp3');
-    //const closeBtn = document.querySelector('.close__btn');
+    const elements = {
+        btn: document.querySelector('.btn_spin'),
+        winner: document.querySelector('.winner'),
+        winElements: document.querySelectorAll('.win'),
+        modalOverlay: document.querySelector('.modal_overlay'),
+        modalSignup: document.querySelector('.modal_signup'),
+        sounds: {
+            win: new Audio('https://n1md7.github.io/slot-game/sound/win.mp3'),
+            spin: new Audio('https://n1md7.github.io/slot-game/sound/spin.mp3')
+        }
+    };
+
+    const addClassWithDelay = (elements, className, delay) => {
+        elements.forEach((element, index) => {
+            setTimeout(() => {
+                element.classList.add(className);
+            }, index * delay);
+        });
+    };
+
+    const showModal = (overlay, modal, delay) => {
+        setTimeout(() => {
+            overlay.classList.add('show');
+            modal.classList.add('show');
+        }, delay);
+    };
 
     const winnerShow = () => {
         setTimeout(() => {
-            win.play();
-            winner.classList.add('active');
-            // btn.style.opacity = 1;
-            // btn.style.pointerEvents = 'auto';
-            winElements.forEach((element, index) => {
-                setTimeout(() => {
-                    element.classList.add('active');
-                }, index * 500); // Кожен елемент активується через 0.5 секунди після попереднього
-            });
+            elements.sounds.win.play();
+            elements.winner.classList.add('active');
+            addClassWithDelay(elements.winElements, 'active', 500);
         }, 6800);
 
-        setTimeout(() => {
-            modalOverlay.classList.add('show');
-            modalSignup.classList.add('show');
-            updateTimer();
-        }, 11000);
+        showModal(elements.modalOverlay, elements.modalSignup, 11000);
     };
 
-    btn.addEventListener('click', (e) => {
-        // document.getElementById('/src/sounds/coin-win.wav').play();
-        spin.play();
+    elements.btn.addEventListener('click', () => {
+        updateTimer();
+        elements.sounds.spin.play();
         startPlay();
         winnerShow();
-        btn.style.opacity = 0.5;
-        btn.style.pointerEvents = 'none';
+        elements.btn.style.opacity = 0.5;
+        elements.btn.style.pointerEvents = 'none';
     });
-
-    // closeBtn.addEventListener('click', (e) => {
-    //     modalOverlay.classList.remove('show');
-    //     modalSignup.classList.remove('show');
-    // });
 })();
