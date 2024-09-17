@@ -14,7 +14,6 @@ html {
 }
 
 body {
-  padding: 10px;
   width: 100vw;
   height: 100vh;
   color: #262626;
@@ -36,7 +35,7 @@ body {
   aspect-ratio: 2.2;
 
   @media screen and (max-width: 900px) {
-    padding: 4% 16.5%;
+    padding: 7% 9.5%;
   }
 }
 
@@ -105,9 +104,9 @@ button.btn_spin {
 
   @media screen and (max-width: 900px) {
     padding: 0;
-    left: 14%;
-    right: 14%;
-    width: 72%;
+    left: 7%;
+    right: 7%;
+    width: 86%;
 
     .win {
       width: 140%;
