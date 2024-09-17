@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { SourceMapDevToolPlugin, ProvidePlugin } = require("webpack")
+const path = require("path");
 
 let mode = "development";
 
@@ -64,6 +65,10 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif|ogg|mp3|wav)$/i,
         type: "asset/resource",
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
       {
         test: /\.m?js$/,

@@ -35,7 +35,7 @@ $headerHeight: 56px;
 
   .popup {
     position: relative;
-    width: 548px;
+    width: 452px;
     max-width: 100%;
     margin: auto;
     animation: appear 0.5s ease;
@@ -48,16 +48,15 @@ $headerHeight: 56px;
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
       height: $headerHeight;
       line-height: $headerHeight;
       color: #ffffff;
-      text-align: center;
       background: linear-gradient(136deg, #3A90E9 0%, #266BC5 87.32%);
 
       .title {
         padding: 0;
-        font-size: 24px;
+        font-size: 20px;
+        font-family: Rubik-Bold, sans-serif;
         font-weight: 700;
       }
 
@@ -79,7 +78,7 @@ $headerHeight: 56px;
       min-height: 400px;
       color: #262626;
       background: #EFF5FE;
-      padding: 6px 30px 20px;
+      padding: 20px 40px 0;
       border-radius: 0 0 20px 20px;
 
       img {
@@ -87,7 +86,7 @@ $headerHeight: 56px;
       }
 
       .block {
-        max-width: 366px;
+        max-width: 356px;
         margin: 10px auto 0;
 
         .description {
@@ -95,6 +94,7 @@ $headerHeight: 56px;
         }
 
         .checkbox-description {
+          margin-top: 10px;
           font-size: 12px;
 
           a {

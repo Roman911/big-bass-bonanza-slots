@@ -1,1 +1,2 @@
 import './slot';
+import './timer';

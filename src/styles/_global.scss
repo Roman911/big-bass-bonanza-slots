@@ -6,7 +6,11 @@ $shadow: rgb(185, 185, 185);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Rubik-Regular, Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-family: Rubik-Regular, sans-serif;
 }
 
 body {
@@ -14,6 +18,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: #000000;
+  font-family: Rubik-Regular, sans-serif;
   background-image: url("/src/images/bg_global.png");
 }
 
@@ -44,6 +49,7 @@ h2.title {
   color: #ffffff;
   font-size: 42px;
   text-align: center;
+  font-family: Rubik-Bold, sans-serif;
   font-weight: 700;
 }
 

@@ -6,6 +6,7 @@ import {
     Sprite,
     BlurFilter,
 } from 'pixi.js';
+import { updateTimer } from './timer';
 
 import iconTen from '../images/icon-10.png';
 import iconFs from '../images/icon-40fs.png';
@@ -236,7 +237,8 @@ import sound from '../sounds/coin-win.wav';
         setTimeout(() => {
             modalOverlay.classList.add('show');
             modalSignup.classList.add('show');
-        }, 13000);
+            updateTimer();
+        }, 11000);
     };
 
     btn.addEventListener('click', (e) => {
