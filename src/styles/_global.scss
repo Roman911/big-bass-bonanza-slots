@@ -35,7 +35,7 @@ body {
   background-size: cover;
 
   @media screen and (max-width: 900px) {
-    min-height: 180px;
+    min-height: 140px;
     padding: 4% 16.5%;
   }
 }
@@ -112,12 +112,12 @@ button.btn_spin {
     width: 72%;
 
     .win {
-      width: 100%;
+      width: 140%;
       height: 80px;
-      background-size: cover;
+      margin-left: -18%;
 
       &:not(:first-child) {
-        margin-left: 0;
+        margin-left: -10px;
       }
     }
   }
