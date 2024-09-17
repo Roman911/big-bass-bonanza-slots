@@ -1,16 +1,31 @@
 .timer-wrap {
-  padding-bottom: 14px;
+  padding-top: 16px;
+  padding-bottom: 20px;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .timer-title {
+    width: 112px;
     font-size: 14px;
     font-weight: 600;
+    color: #1E1E1E;
+    text-align: right;
+    margin-right: 10px;
+    text-transform: uppercase;
     font-family: Rubik-SemiBold, sans-serif;
   }
 
   .timer {
     font-size: 28px;
     font-weight: 700;
+    padding: 6px 18px;
+    border-radius: 15px;
+    color: #3D3D3D;
+    width: 126px;
+    text-align: center;
     font-family: Rubik-Bold, sans-serif;
+    background: linear-gradient(90deg, #FFD083 0%, #FFAA7D 100%);
   }
 }

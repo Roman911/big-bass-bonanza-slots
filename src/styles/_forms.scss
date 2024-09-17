@@ -1,5 +1,5 @@
 $inputTopLabelSpace: 16px;
-$inputHeight: 38px;
+$inputHeight: 44px;
 
 .form {
   color: inherit;
@@ -17,6 +17,7 @@ $inputHeight: 38px;
       width: 100%;
       position: relative;
       height: $inputHeight;
+      line-height: $inputHeight;
       padding: 14px 18px 12px;
       font-size: 14px;
       font-weight: normal;
@@ -26,7 +27,7 @@ $inputHeight: 38px;
       transition: .2s ease border-color;
       background: linear-gradient(#EFF5FE, #EFF5FE) padding-box, linear-gradient(to right, #1A7BDC, #0A2792) border-box;
       border-radius: 10px;
-      border: 1px solid transparent;
+      border: 2px solid transparent;
       outline: none;
 
       &.center {

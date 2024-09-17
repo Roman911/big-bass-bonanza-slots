@@ -17,6 +17,7 @@ body {
   padding: 10px;
   width: 100vw;
   height: 100vh;
+  color: #262626;
   background-color: #000000;
   font-family: Rubik-Regular, sans-serif;
   background-image: url("/src/images/bg_global.png");
@@ -27,15 +28,14 @@ body {
   width: 100%;
   max-width: 1000px;
   margin: 0 auto;
-  min-height: 496px;
   padding: 60px 154px 54px;
   background-image: url("/src/images/slote-ramka.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  aspect-ratio: 2.2;
 
   @media screen and (max-width: 900px) {
-    min-height: 140px;
     padding: 4% 16.5%;
   }
 }
@@ -79,9 +79,7 @@ button.btn_spin {
   top: 50%;
   left: 122px;
   transform: translateY(-45%);
-  //display: flex;
   transition: 500ms;
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   width: 76%;
