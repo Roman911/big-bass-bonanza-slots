@@ -17,9 +17,14 @@ body {
   width: 100vw;
   height: 100vh;
   color: #262626;
+  padding: 10px;
   background-color: #000000;
   font-family: Rubik-Regular, sans-serif;
   background-image: url("/src/images/bg_global.png");
+
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
 }
 
 #app {
@@ -75,7 +80,7 @@ button.btn_spin {
 
 .winner {
   position: absolute;
-  top: 50%;
+  top: 47%;
   left: 122px;
   transform: translateY(-45%);
   transition: 500ms;
@@ -120,6 +125,24 @@ button.btn_spin {
   }
 }
 
+.text-win-wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+}
+
+.text-win {
+  display: none;
+  width: 100%;
+  animation: animatetoptwt 1s ease;
+
+  &.active {
+    display: block;
+  }
+}
+
 @keyframes animatetopw {
   0% {
     opacity: 0;
@@ -128,6 +151,25 @@ button.btn_spin {
   50% {
     opacity: 0.7;
     transform: scale(1.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animatetoptwt {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  75% {
+    opacity: 0.75;
+    transform: scale(0.9);
   }
   100% {
     opacity: 1;

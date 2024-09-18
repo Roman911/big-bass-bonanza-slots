@@ -113,8 +113,8 @@ import sound from '../sounds/coin-win.wav';
         for (let i = 0; i < reels.length; i++) {
             const r = reels[i];
             const extra = 8;
-            const target = r.position + 10 + i * 5 + extra;
-            const time = 2500 + i * 600 + extra * 600;
+            const target = r.position + 10 + i * 15 + extra;
+            const time = 2500 + i * 200 + extra * 200;
 
             tweenTo(r, 'position', target, time, backout(0.5), null, i === reels.length - 1 ? reelsComplete : null);
         }
@@ -218,6 +218,7 @@ import sound from '../sounds/coin-win.wav';
         winElements: document.querySelectorAll('.win'),
         modalOverlay: document.querySelector('.modal_overlay'),
         modalSignup: document.querySelector('.modal_signup'),
+        textSpin: document.querySelector('.text-win'),
         sounds: {
             win: new Audio('https://n1md7.github.io/slot-game/sound/win.mp3'),
             spin: new Audio('https://n1md7.github.io/slot-game/sound/spin.mp3')
@@ -243,10 +244,12 @@ import sound from '../sounds/coin-win.wav';
         setTimeout(() => {
             elements.sounds.win.play();
             elements.winner.classList.add('active');
-            addClassWithDelay(elements.winElements, 'active', 500);
-        }, 6800);
-
-        showModal(elements.modalOverlay, elements.modalSignup, 11000);
+            addClassWithDelay(elements.winElements, 'active', 160);
+        }, 3800);
+        setTimeout(() => {
+            elements.textSpin.classList.add('active');
+        },5500);
+        showModal(elements.modalOverlay, elements.modalSignup, 9000);
     };
 
     elements.btn.addEventListener('click', () => {
