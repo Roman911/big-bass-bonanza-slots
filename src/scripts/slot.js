@@ -253,7 +253,7 @@ import sound from '../sounds/coin-win.wav';
     };
 
     elements.btn.addEventListener('click', () => {
-        updateTimer();
+        //updateTimer();
         elements.sounds.spin.play();
         startPlay();
         winnerShow();

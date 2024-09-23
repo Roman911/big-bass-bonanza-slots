@@ -76,7 +76,7 @@ $headerHeight: 56px;
     }
 
     > .content {
-      min-height: 400px;
+      min-height: 280px;
       color: #262626;
       background: #EFF5FE;
       padding: 20px;
@@ -87,11 +87,11 @@ $headerHeight: 56px;
       }
 
       .description {
-        margin-bottom: 36px;
+        margin-top: 20px;
+        margin-bottom: 10px;
         font-size: 16px;
         font-weight: 500;
         text-align: center;
-        text-transform: uppercase;
         font-family: Rubik-Medium, sans-serif;
       }
 
